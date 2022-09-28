@@ -1,0 +1,32 @@
+<div class="tui-container">
+    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+        <div class="tui-col_8">
+            <h3 class="tui-form__header tui-form__header_margin-top_none">Вход</h3>
+            <div class="tui-form_row">
+                <tui-input formControlName="emailValue" [tuiTextfieldCleaner]="true" tuiTextfieldIconLeft="tuiIconMailLarge">
+                    Введите почту
+                    <span class="tui-required"></span>
+                    <input tuiTextfield placeholder="mail@mail.ru" type="email" />
+                </tui-input>
+                <tui-error formControlName="emailValue" [error]="[] | tuiFieldError | async"></tui-error>
+            </div>
+            <div class="tui-form_row">
+                <tui-input-password formControlName="passwordValue" class="tui-space_top-2" tuiTextfieldIconLeft="tuiIconLockLarge">
+                    Введите пароль
+                    <span class="tui-required"></span>
+                    <input tuiTextfield placeholder="Make it secure!" />
+                </tui-input-password>
+                <tui-error formControlName="passwordValue" [error]="[] | tuiFieldError | async"></tui-error>
+            </div>
+
+            <div class="tui-form__buttons">
+                <button tuiButton size="l" type="submit" class="tui-form__button">
+                    Войти
+                </button>
+                <button tuiButton type="button" appearance="flat" size="l" class="tui-form__button" (click)="close()">
+                    Зарегистрироваться
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

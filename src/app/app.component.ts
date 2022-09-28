@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Focus';
+
+  constructor() {
+    console.log(Intl.DateTimeFormat().resolvedOptions().locale)
+  }
 }

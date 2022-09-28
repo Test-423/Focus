@@ -1,0 +1,48 @@
+<div class="tui-container">
+    <form [formGroup]="registrationForm">
+        <div class="tui-col_8">
+            <h3 class="tui-form__header tui-form__header_margin-top_none">Вход</h3>
+
+            <div class="tui-form_row">
+                <tui-input formControlName="nameValue" [tuiTextfieldCleaner]="true">
+                    Имя
+                    <span class="tui-required"></span>
+                    <input tuiTextfield placeholder="mail@mail.ru" type="email" />
+                </tui-input>
+                <tui-error formControlName="loginValue" [error]="[] | tuiFieldError | async"></tui-error>
+            </div>
+
+            <div class="tui-form_row">
+                <tui-input formControlName="emailValue" [tuiTextfieldCleaner]="true">
+                    Почта
+                    <span class="tui-required"></span>
+                    <input tuiTextfield placeholder="mail@mail.ru" type="email" />
+                </tui-input>
+                <tui-error formControlName="loginValue" [error]="[] | tuiFieldError | async"></tui-error>
+            </div>
+
+            <div class="tui-form_row">
+                <tui-input-password formControlName="passwordValue" class="tui-space_top-2">
+                    Введите пароль
+                    <input tuiTextfield placeholder="Make it secure!" />
+                </tui-input-password>
+            </div>
+
+            <div class="tui-form__buttons">
+                <button tuiButton size="l" type="submit" class="tui-form__button">
+                    Зарегистрироваться
+                </button>
+                <button tuiButton type="button" appearance="flat" size="l" class="tui-form__button">
+                    Назад
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<ng-template #success>
+    <tui-svg
+        src="tuiIconCheckLarge"
+        class="success tui-space_left-3"
+    ></tui-svg>
+</ng-template>
